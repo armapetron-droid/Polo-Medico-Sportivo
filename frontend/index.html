@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForceX | Polo Medico Sportivo Avanzato</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-landing {
+            height: 450px;
+            background-image: linear-gradient(to bottom, rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.95)), 
+                              url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--fx-white);
+            padding: 0 20px;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 15px;
+        }
+        .hero-content h1 span {
+            color: var(--fx-orange);
+        }
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .service-card {
+            background: var(--fx-white);
+            border: 1px solid #e5e7eb;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--fx-orange);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .features-section {
+            background-color: var(--fx-dark);
+            color: var(--fx-white);
+            padding: 60px 20px;
+            margin-top: 60px;
+            border-radius: var(--border-radius);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .feature-item h4 {
+            color: var(--fx-orange);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #e5e7eb;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="forcex-header">
+        <div class="nav-container">
+            <div class="brand-logo">
+                <span class="brand-icon">⚡</span> Force<span class="brand-highlight">X</span>
+            </div>
+            <div class="brand-subtitle">Polo Medico Sportivo</div>
+        </div>
+    </header>
+
+    <section class="hero-landing">
+        <div class="hero-content">
+            <h1>Performance. Salute. <span>Idoneità.</span></h1>
+            <p style="font-size: 1.3rem; color: #9ca3af; max-width: 700px; margin: 0 auto;">
+                Il centro di medicina dello sport avanzato per atleti professionisti e amatori. Gestione digitale dei certificati, diagnostica d'avanguardia e protocolli riabilitativi personalizzati.
+            </p>
+            
+            <div class="cta-group">
+                <a href="login.html" class="btn" style="text-decoration: none; background-color: var(--fx-orange);">
+                    🏃 Area Atleta / Prenotazioni
+                </a>
+                <a href="login_medico.html" class="btn btn-secondary" style="text-decoration: none;">
+                    🥼 Portale Medico / Agende
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container" style="box-shadow: none; background: transparent; padding: 20px 0;">
+        <h2 style="font-size: 2rem;">I Nostri Reparti Specialistici</h2>
+        <p>Infrastrutture cliniche dedicate per garantire la massima accuratezza diagnostica e il rilascio dei visti agonistici.</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">🫀</span>
+                <h3>Cardiologia dello Sport</h3>
+                <p>Screening cardiologici completi, elettrocardiogrammi sotto sforzo (cicloergometro) e monitoraggio continuo per il rilascio sicuro delle idoneità agonistiche di Tipo B.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🦴</span>
+                <h3>Ortopedia e Traumatologia</h3>
+                <p>Prevenzione e trattamento delle patologie dell'apparato muscolo-scheletrico legate all'attività atletica. Gestione traumi da impatto e sovraccarico funzionale.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🏃‍♂️</span>
+                <h3>Fisioterapia e Riabilitazione</h3>
+                <p>Protocolli di recupero accelerati post-infortunio e post-operatori. Terapie manuali e strumentali d'avanguardia per rimettere l'atleta in campo nel minor tempo possibile.</p>
+            </div>
+        </div>
+
+        <section class="features-section">
+            <h3 style="color: var(--fx-white); text-align: center; font-size: 1.8rem; font-weight: 800;">
+                Infrastruttura Digitale Certificata Force<span style="color: var(--fx-orange);">X</span>
+            </h3>
+            <p style="text-align: center; color: #9ca3af; max-width: 600px; margin: 0 auto 30px auto;">
+                Il nostro polo utilizza un sistema di validazione dei dati crittografico e stateless per garantire la totale inalterabilità dei referti medici.
+            </p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>Emissione PDF in Real-Time</h4>
+                    <p style="color: #cbd5e1; font-size: 0.9rem;">I certificati vengono generati istantaneamente in formato PDF non modificabile con firma digitale simulata del medico valutatore.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Sicurezza Stateless</h4>
+                    <p style="color: #cbd5e1; font-size: 0.9rem;">Autenticazione blindata tramite JSON Web Token (JWT) che impedisce accessi non autorizzati ai dati sanitari sensibili.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Barriere di Accesso</h4>
+                    <p style="color: #cbd5e1; font-size: 0.9rem;">Controllo stringente basato sui ruoli. I reparti critici sono protetti da policy automatizzate sul database relazionale.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ForceX S.p.A. - Polo Medico Sportivo Avanzato. Tutti i diritti riservati.</p>
+        <p style="font-size: 0.8rem; color: #9ca3af;">Codice Progetto: PW16 | Conforme alle direttive sanitarie regionali per la tutela della salute nello sport.</p>
+    </footer>
+
+</body>
+</html>

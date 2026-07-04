@@ -1,0 +1,259 @@
+/* ========================================================================
+   THEME STYLESHEET - FORCEX POLO MEDICO SPORTIVO
+   ======================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+:root {
+    --fx-black: #111827;           /* Sfondo scuro e testi principali */
+    --fx-dark: #1f2937;            /* Elementi UI scuri */
+    --fx-orange: #f97316;          /* Accento sportivo ForceX */
+    --fx-orange-hover: #ea580c;    
+    --fx-steel: #f3f4f6;           /* Sfondo pagina */
+    --fx-white: #ffffff;
+    --fx-green: #10b981;           /* Idoneo / Successo */
+    --fx-red: #ef4444;             /* Non idoneo / Errore / Annullato */
+    --border-radius: 6px;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--fx-steel);
+    color: var(--fx-black);
+    line-height: 1.6;
+}
+
+/* --- NAV BAR E BRANDING --- */
+.forcex-header {
+    background-color: var(--fx-black);
+    color: var(--fx-white);
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.brand-highlight {
+    color: var(--fx-orange);
+}
+
+.brand-icon {
+    font-size: 1.5rem;
+    color: var(--fx-orange);
+}
+
+.brand-subtitle {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- HERO BANNER (L'Immagine Sportiva) --- */
+.hero-banner {
+    width: 100%;
+    height: 220px;
+    background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center 30%;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to right, rgba(17, 24, 39, 0.9) 0%, rgba(17, 24, 39, 0.4) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%;
+    color: var(--fx-white);
+}
+
+.hero-overlay h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-overlay p {
+    font-size: 1.1rem;
+    color: #d1d5db;
+}
+
+/* --- CONTAINER PRINCIPALE --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto 60px auto;
+    background: var(--fx-white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+h2 {
+    color: var(--fx-black);
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h2::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 24px;
+    background-color: var(--fx-orange);
+    border-radius: 3px;
+}
+
+/* --- INPUT E SELECT CHIRURGICI --- */
+label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    color: var(--fx-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: var(--border-radius);
+    background-color: #f9fafb;
+    color: var(--fx-black);
+    font-size: 1rem;
+    transition: all 0.2s;
+    margin-bottom: 20px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--fx-orange);
+    background-color: var(--fx-white);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+/* --- BUTTONS "USER FRIENDLY" --- */
+button, .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--fx-orange);
+    color: var(--fx-white);
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: var(--shadow-sm);
+}
+
+button:hover, .btn:hover {
+    background-color: var(--fx-orange-hover);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button.btn-secondary {
+    background-color: var(--fx-dark);
+}
+
+button.btn-secondary:hover {
+    background-color: var(--fx-black);
+}
+
+/* Bottone di logout (più discreto) */
+button[onclick="eseguiLogout()"] {
+    background-color: #f3f4f6;
+    color: var(--fx-red);
+    border: 1px solid #d1d5db;
+    box-shadow: none;
+}
+button[onclick="eseguiLogout()"]:hover {
+    background-color: #fee2e2;
+    border-color: #f87171;
+}
+
+/* --- LISTE E CARD (AGENDA E PRENOTAZIONI) --- */
+ul { list-style: none; }
+
+.agenda-item, .booking-card, li {
+    background: var(--fx-white);
+    border: 1px solid #e5e7eb;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+li:hover {
+    box-shadow: var(--shadow-md);
+    border-color: #d1d5db;
+}
+
+/* Badge di stato clinico */
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-active { background-color: #dbeafe; color: #1e40af; }
+.status-completed { background-color: #d1fae5; color: #065f46; }
+.status-cancelled { background-color: #fee2e2; color: #991b1b; }
+
+/* Alert Box */
+#alert-box {
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 25px;
+    font-weight: 600;
+    border-left: 4px solid transparent;
+}

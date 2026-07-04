@@ -1,0 +1,24 @@
+services:
+  # IL MOTORE (Backend FastAPI)
+  api:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: pw16_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      # Monta la cartella corrente per permettere l'aggiornamento del codice in tempo reale
+      - ./backend:/app
+    restart: unless-stopped
+
+  # LA CARROZZERIA (Frontend su Nginx)
+  web:
+    image: nginx:alpine
+    container_name: pw16_frontend
+    ports:
+      - "3000:80"
+    volumes:
+      # ATTENZIONE AL PERCORSO: Questo presuppone che i tuoi file HTML/JS/CSS siano in una cartella 'frontend'
+      - ./frontend:/usr/share/nginx/html
+    restart: unless-stopped

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForceX | Portale Medico</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Stile specifico per la finestra modale di refertazione */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(17, 24, 39, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 35px;
+            border-radius: var(--border-radius);
+            max-width: 600px;
+            width: 90%;
+            box-shadow: var(--shadow-md);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="forcex-header">
+        <div class="nav-container">
+            <div class="brand-logo"><span class="brand-icon">⚡</span> Force<span class="brand-highlight">X</span></div>
+            <button onclick="eseguiLogout()">Esci / Logout</button>
+        </div>
+    </header>
+
+    <div class="hero-banner">
+        <div class="hero-overlay">
+            <h1>Terminale Clinico Medico</h1>
+            <p>Gestione dell'agenda giornaliera, diagnostica ed emissione dei certificati legali.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+            <h2>Agenda Medica Personale</h2>
+            <button onclick="caricaAgendaMedico()" class="btn-secondary">🔄 Sincronizza Agenda</button>
+        </div>
+        
+        <p>Elenco delle visite programmate. Il sistema consente la refertazione esclusiva delle visite in stato "Attiva".</p>
+
+        <div id="agenda-list" style="margin-top: 20px;">
+            <p style="color: var(--text-muted);">Sincronizzazione della base dati in corso...</p>
+        </div>
+    </div>
+    <div id="modale-diagnosi" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+        <div class="modal-content" style="background: white; padding: 25px; border-radius: 8px; width: 90%; max-width: 600px; position: relative;">
+            
+            <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 20px;">
+                <h3 style="margin: 0; color: #1e293b;">Emissione Referto ed Idoneità</h3>
+                <button onclick="chiudiModaleDiagnosi()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #ef4444;">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <form id="form-diagnosi" onsubmit="salvaDiagnosiDaModale(event)">
+                    
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label for="cert-sport-modale" style="display: block; margin-bottom: 5px; font-weight: bold;">Disciplina Sportiva (Solo Agonistica)</label>
+                        <input type="text" id="cert-sport-modale" placeholder="es. Calcio, Atletica..." style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+                    
+                    <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="cert-idoneo-modale" style="display: block; margin-bottom: 5px; font-weight: bold;">Esito Valutazione</label>
+                            <select id="cert-idoneo-modale" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                                <option value="true">IDONEO alla pratica sportiva</option>
+                                <option value="false">NON IDONEO</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="flex: 1;">
+                            <label for="cert-scadenza-modale" style="display: block; margin-bottom: 5px; font-weight: bold;">Scadenza Certificato</label>
+                            <input type="date" id="cert-scadenza-modale" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="testo-diagnosi-modale" style="display: block; margin-bottom: 5px; font-weight: bold;">Quadro Clinico e Diagnosi Specialistica</label>
+                        <textarea id="testo-diagnosi-modale" rows="6" required placeholder="Trascrivere i dettagli anamnestici e diagnostici della visita..." style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-family: inherit; resize: vertical;"></textarea>
+                    </div>
+
+                    <button type="submit" style="width: 100%; background-color: #10b981; color: white; border: none; padding: 12px; font-size: 1.1rem; border-radius: 4px; cursor: pointer; font-weight: bold;">💾 Firma ed Emetti Documento</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="core.js"></script>
+    <script src="medico.js"></script>
+</body>
+</html>

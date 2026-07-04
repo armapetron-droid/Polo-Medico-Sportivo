@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForceX | Registrazione Atleta</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Classi necessarie al tuo script JS per i messaggi di errore */
+        .error-msg {
+            background-color: #fee2e2;
+            color: var(--danger-red);
+            border-left: 4px solid var(--danger-red);
+            padding: 10px; margin-bottom: 15px; border-radius: 4px;
+        }
+        .success-msg {
+            background-color: #e8f5e9;
+            color: var(--fx-green);
+            border-left: 4px solid var(--fx-green);
+            padding: 10px; margin-bottom: 15px; border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="forcex-header">
+        <div class="nav-container">
+            <div class="brand-logo"><span class="brand-icon">⚡</span> Force<span class="brand-highlight">X</span></div>
+            <div class="brand-subtitle">Onboarding Pazienti</div>
+        </div>
+    </header>
+
+    <div class="container" style="max-width: 500px; margin-top: 40px; margin-bottom: 40px;">
+        <h2>Apertura Fascicolo</h2>
+        <p>Inserisci i tuoi dati anagrafici per accedere alle prenotazioni specialistiche.</p>
+        
+        <div id="alert-box" style="display: none;"></div>
+
+        <form id="form-registrazione">
+            <div style="display: flex; gap: 15px;">
+                <div class="form-group" style="flex: 1;">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label for="cognome">Cognome</label>
+                    <input type="text" id="cognome" required>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px;">
+                <div class="form-group" style="flex: 1;">
+                    <label for="codice_fiscale">Codice Fiscale</label>
+                    <input type="text" id="codice_fiscale" required maxlength="16" style="text-transform: uppercase;">
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label for="telefono">Telefono</label>
+                    <input type="tel" id="telefono" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Indirizzo Email</label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password di Sicurezza</label>
+                <input type="password" id="password" required minlength="8" placeholder="Minimo 8 caratteri">
+            </div>
+
+            <button type="submit" style="width: 100%; margin-top: 15px;">Registra Profilo e Accedi</button>
+        </form>
+
+        <div style="margin-top: 25px; text-align: center; font-size: 0.9rem;">
+            <a href="login.html" style="color: var(--text-muted); text-decoration: none;">&larr; Torna al Login</a>
+        </div>
+    </div>
+
+    <script src="core.js"></script>
+    <script src="registrazione.js"></script> 
+</body>
+</html>
