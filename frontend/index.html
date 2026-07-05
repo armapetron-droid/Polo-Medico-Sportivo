@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ForceX | Polo Medico Sportivo Avanzato</title>
+    <!-- Importazione CDN FontAwesome per icone vettoriali professionali -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
         .hero-landing {
@@ -57,6 +59,7 @@
             font-size: 2.5rem;
             margin-bottom: 15px;
             display: inline-block;
+            color: var(--fx-orange); /* Colore icona uniformato al brand */
         }
         .features-section {
             background-color: var(--fx-dark);
@@ -92,7 +95,7 @@
     <header class="forcex-header">
         <div class="nav-container">
             <div class="brand-logo">
-                <span class="brand-icon">⚡</span> Force<span class="brand-highlight">X</span>
+                <i class="fa-solid fa-bolt brand-icon" style="color: var(--fx-orange);"></i> Force<span class="brand-highlight">X</span>
             </div>
             <div class="brand-subtitle">Polo Medico Sportivo</div>
         </div>
@@ -107,10 +110,10 @@
             
             <div class="cta-group">
                 <a href="login.html" class="btn" style="text-decoration: none; background-color: var(--fx-orange);">
-                    🏃 Area Atleta / Prenotazioni
+                    <i class="fa-solid fa-person-running"></i> Area Atleta / Prenotazioni
                 </a>
                 <a href="login_medico.html" class="btn btn-secondary" style="text-decoration: none;">
-                    🥼 Portale Medico / Agende
+                    <i class="fa-solid fa-user-doctor"></i> Portale Medico / Agende
                 </a>
             </div>
         </div>
@@ -122,19 +125,19 @@
         
         <div class="services-grid">
             <div class="service-card">
-                <span class="service-icon">🫀</span>
+                <i class="fa-solid fa-heart-pulse service-icon"></i>
                 <h3>Cardiologia dello Sport</h3>
                 <p>Screening cardiologici completi, elettrocardiogrammi sotto sforzo (cicloergometro) e monitoraggio continuo per il rilascio sicuro delle idoneità agonistiche di Tipo B.</p>
             </div>
 
             <div class="service-card">
-                <span class="service-icon">🦴</span>
+                <i class="fa-solid fa-bone service-icon"></i>
                 <h3>Ortopedia e Traumatologia</h3>
                 <p>Prevenzione e trattamento delle patologie dell'apparato muscolo-scheletrico legate all'attività atletica. Gestione traumi da impatto e sovraccarico funzionale.</p>
             </div>
 
             <div class="service-card">
-                <span class="service-icon">🏃‍♂️</span>
+                <i class="fa-solid fa-dumbbell service-icon"></i>
                 <h3>Fisioterapia e Riabilitazione</h3>
                 <p>Protocolli di recupero accelerati post-infortunio e post-operatori. Terapie manuali e strumentali d'avanguardia per rimettere l'atleta in campo nel minor tempo possibile.</p>
             </div>

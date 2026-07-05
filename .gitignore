@@ -1,12 +1,44 @@
-# Ignora la cache di Python
-__pycache__/
-*.pyc
+# ==========================================
+# 1. SEGRETI E CREDENZIALI
+# ==========================================
+.env
+.env.local
+.env.*
+*.pem
+secrets.json
+config.ini
 
-# Ignora i database SQLite locali
+# ==========================================
+# 2. DATABASE E FILE LOCALI
+# ==========================================
 *.db
+*.sqlite
 *.sqlite3
+/data/
+/uploads/
 
-# Ignora gli ambienti virtuali
+# ==========================================
+# 3. AMBIENTI VIRTUALI PYTHON
+# ==========================================
+
 venv/
 .venv/
 env/
+ENV/
+
+# ==========================================
+# 4. ARTEFATTI PYTHON E LOG FASTAPI
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+.pytest_cache/
+
+# ==========================================
+# 5. SISTEMA OPERATIVO E IDE
+# ==========================================
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
