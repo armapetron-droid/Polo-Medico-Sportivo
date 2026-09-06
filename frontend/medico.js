@@ -200,7 +200,7 @@ async function salvaDiagnosiDaModale(event) {
         if (dataCertificato.path_file_pdf) {
             const token = localStorage.getItem("token");
             // Usa rigorosamente 127.0.0.1 come l'API base. MAI mischiare le origini!
-            const urlCompleto = `http://127.0.0.1:8000${dataCertificato.path_file_pdf}?token=${token}`;
+            const urlCompleto = "http://" + window.location.hostname + ":8000" + dataCertificato.path_file_pdf + "?token=" + token;
             window.open(urlCompleto, "_blank");
         }
 

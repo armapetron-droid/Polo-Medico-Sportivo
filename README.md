@@ -43,6 +43,7 @@ http://localhost:3000/login.html  (pagina di login o in assenza di utenza di reg
 
 http://localhost:3000/login_medico.html   (pagina di login dei medici specialisti facenti parte del Polo Medico Sportivo. Le credenziali, in un reale ambiente sanitario, sono state fornite degli admin ai diretti interessati ed e' impossibile effettuare alcuna registrazione come medico)
 
+
 ## Documentazione interattiva API con Swagger UI
 http://localhost:8000/docs
 

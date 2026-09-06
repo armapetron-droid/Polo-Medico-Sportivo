@@ -181,7 +181,7 @@ async function caricaCertificati() {
 async function scaricaPDF(certificatoId) {
     const token = localStorage.getItem("token");
     try {
-        const response = await fetch(`http://127.0.0.1:8000/api/v1/certificati/${certificatoId}/download`, {
+        const response = await fetch(API_BASE_URL + `/certificati/${certificatoId}/download`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
